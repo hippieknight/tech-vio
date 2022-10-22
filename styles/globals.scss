@@ -60,3 +60,44 @@ p{
   }
 }
 
+// animation
+.animation-slideUp {
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      margin-top: 150px;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  animation: slideUp 1.5s;
+}
+
+.animation-slideLeft {
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      margin-left: 150px;
+    }
+    to {
+      opacity: 1;
+      margin-left: 0;
+    }
+  }
+  animation: slideLeft 1.5s;
+}
+.animation-slideRight {
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      margin-right: 150px;
+    }
+    to {
+      opacity: 1;
+      margin-right: 0;
+    }
+  }
+  animation: slideRight 1.5s;
+}
+

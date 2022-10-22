@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "@emotion/styled";
 import { AiOutlineSolution } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
@@ -6,10 +7,30 @@ import { FaLaptopCode } from "react-icons/fa";
 import { GrOptimize } from "react-icons/gr";
 import { FcDataRecovery } from "react-icons/fc";
 import ProvideCard from "../../../_common/card/ProvideCard";
+import { IsElementInViewport } from "../../../../utils/CheckElementInViewport";
 
 const WhatWeProvide = () => {
+  useEffect(() => {
+    const section = document.getElementById("what-we-provide");
+
+    const TriggerAnimation = () => {
+      if (IsElementInViewport(section)) {
+        section.classList.add("animation-slideUp");
+      }
+    };
+
+    const RemoveAnimation = () => {
+      section.classList.remove("animation-slideUp");
+    };
+    window.addEventListener("scroll", TriggerAnimation);
+
+    return () => {
+      window.removeEventListener("scroll", RemoveAnimation);
+    };
+  }, []);
+
   return (
-    <SectionWrap>
+    <SectionWrap id="what-we-provide">
       <Title>What We Provide</Title>
       <SubTitle>IT Solutions</SubTitle>
       <ContentWrap>

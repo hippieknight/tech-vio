@@ -1,9 +1,30 @@
+import { useEffect } from "react";
 import styled from "@emotion/styled";
 import ProgressCpn from "../../../_common/progress/Progress";
+import { IsElementInViewport } from "../../../../utils/CheckElementInViewport";
 
 const AboutUs = () => {
+  useEffect(() => {
+    const section = document.getElementById("about-us");
+
+    const TriggerAnimation = () => {
+      if (IsElementInViewport(section)) {
+        section.classList.add("animation-slideRight");
+      }
+    };
+
+    const RemoveAnimation = () => {
+      section.classList.remove("animation-slideRight");
+    };
+    window.addEventListener("scroll", TriggerAnimation);
+
+    return () => {
+      window.removeEventListener("scroll", RemoveAnimation);
+    };
+  }, []);
+
   return (
-    <SectionWrap>
+    <SectionWrap id="about-us">
       <ContentWrap>
         <Title>About Our Company</Title>
         <SubTitle>
