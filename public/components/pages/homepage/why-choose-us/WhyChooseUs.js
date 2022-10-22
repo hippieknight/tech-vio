@@ -9,12 +9,12 @@ const WhyChooseUs = () => {
 
     const TriggerAnimation = () => {
       if (IsElementInViewport(section)) {
-        section.classList.add("animation-slideLeft");
+        section.classList.add("animation-slideUp");
       }
     };
 
     const RemoveAnimation = () => {
-      section.classList.remove("animation-slideLeft");
+      section.classList.remove("animation-slideUp");
     };
     window.addEventListener("scroll", TriggerAnimation);
 
