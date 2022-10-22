@@ -8,6 +8,10 @@ const Loading = () => {
         setTimeout(() => {
           ref.style.background = "unset";
         }, 2000);
+
+        setTimeout(() => {
+          ref.style.display = "none";
+        }, 2700);
       }}
     >
       <LeftSide />
@@ -78,8 +82,8 @@ const CenterBall = styled.div`
   left: calc(50% - 20px);
 
   @media (min-width: 1024px) {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 
   @keyframes bouncing {
@@ -109,7 +113,7 @@ const Ellipse = styled.div`
   left: calc(50% - 20px);
 
   @media (min-width: 1024px) {
-    width: 80px;
+    width: 60px;
     top: 360px;
   }
 `;

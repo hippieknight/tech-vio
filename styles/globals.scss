@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
 @import "./variable.scss";
 
 html,
@@ -8,8 +8,6 @@ body {
   margin: 0;
   font-family: var(--font-family);
   font-size: 14px;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 
 html{
@@ -23,6 +21,10 @@ a {
 
 h1, h2, h3, h4, h5, p{
   margin: 0;
+}
+p{
+  line-height: 1.8;
+  letter-spacing: 0.3px;
 }
 
 * {
@@ -38,3 +40,23 @@ h1, h2, h3, h4, h5, p{
     background: black;
   }
 }
+
+
+// button styles
+
+.button{
+  border: none;
+  border-radius: 4px;
+  padding: 12px 32px;
+  font-weight: 700;
+  &-primary{
+    background-color: var(--white);
+    color: var(--primary-purple);
+  }
+
+  &-secondary{
+    background-color: var(--primary-purple);
+    color: var(--white);
+  }
+}
+
