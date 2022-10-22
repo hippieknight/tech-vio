@@ -175,7 +175,7 @@ const SidebarWrap = styled.div`
   justify-content: flex-start;
   width: 70vw;
   height: calc(100vh - 80px);
-  right: -100%;
+  right: -16px;
   top: 40px;
   padding: 40px 0;
   background-color: var(--white);
@@ -196,14 +196,10 @@ const SidebarWrap = styled.div`
 
   &.show {
     display: flex;
-    transition: transform 1s;
-    transform: translateX(0);
   }
 
   &.hide {
     display: none;
-    transition: transform 1s;
-    transform: translateX(100%);
   }
 
   @media (min-width: 768px) {
