@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import ProgressCpn from "../../../_common/progress/Progress";
 import { IsElementInViewport } from "../../../../utils/CheckElementInViewport";
 
 const AboutUs = () => {
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     const section = document.getElementById("about-us");
 
@@ -23,6 +25,22 @@ const AboutUs = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const section = document.getElementById("about-us");
+
+    const TriggerAnimation = () => {
+      if (IsElementInViewport(section)) {
+        setShow(true);
+      }
+    };
+
+    window.addEventListener("scroll", TriggerAnimation);
+
+    return () => {
+      window.removeEventListener("scroll", TriggerAnimation);
+    };
+  }, []);
+
   return (
     <SectionWrap id="about-us">
       <ContentWrap>
@@ -35,26 +53,28 @@ const AboutUs = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad
           minim veniam, nostrud
         </Description>
-        <ProgressWrap>
-          <ProgressCpn
-            percent={90}
-            title="IT Consulting"
-            showPercent
-            color="#7B68EE"
-          />
-          <ProgressCpn
-            percent={75}
-            title="Virtual Workstation"
-            showPercent
-            color="#7B68EE"
-          />
-          <ProgressCpn
-            percent={80}
-            title="Managed IT Service"
-            showPercent
-            color="#7B68EE"
-          />
-        </ProgressWrap>
+        {show && (
+          <ProgressWrap>
+            <ProgressCpn
+              percent={90}
+              title="IT Consulting"
+              showPercent
+              color="#7B68EE"
+            />
+            <ProgressCpn
+              percent={75}
+              title="Virtual Workstation"
+              showPercent
+              color="#7B68EE"
+            />
+            <ProgressCpn
+              percent={80}
+              title="Managed IT Service"
+              showPercent
+              color="#7B68EE"
+            />
+          </ProgressWrap>
+        )}
         <Button className="button button-secondary">Learn More</Button>
       </ContentWrap>
       <ImageWrap>

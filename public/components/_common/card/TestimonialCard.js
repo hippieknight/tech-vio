@@ -11,7 +11,7 @@ export default function TestimonialCard({
   return (
     <Wrap>
       <StarRatings
-        rating={4}
+        rating={rating}
         starSpacing="4px"
         starDimension="20px"
         starRatedColor="#FF5E28"
