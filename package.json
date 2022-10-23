@@ -17,7 +17,10 @@
     "react-dom": "18.2.0",
     "react-headroom": "^3.2.1",
     "react-icons": "^4.6.0",
-    "sass": "^1.55.0"
+    "react-slick": "^0.29.0",
+    "react-star-ratings": "^2.3.0",
+    "sass": "^1.55.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "8.25.0",

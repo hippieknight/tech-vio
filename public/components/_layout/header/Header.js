@@ -9,7 +9,6 @@ import Link from "next/link";
 
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
-  const mobile = useMediaQuery(`(max-width: 1023px)`);
 
   const handleShowSidebar = () => {
     setShowSidebar(true);
@@ -37,40 +36,39 @@ const Header = () => {
             <img src="./img/logo.png" alt="logo" />
           </LogoWrap>
         </a>
-        {mobile ? (
-          <MobileNavbar className="mobile-nav">
-            {!showSidebar ? (
-              <FaBars onClick={handleShowSidebar} />
-            ) : (
-              <MdClose onClick={handleCloseSidebar} />
-            )}
 
-            <SidebarWrap className={`${showSidebar ? "show" : "hide"}`}>
-              <NavLink href="#">Home</NavLink>
-              <NavLink href="#">About us</NavLink>
-              <NavLink href="#">Services</NavLink>
-              <NavLink href="#">Projects</NavLink>
-              <NavLink href="#">Pages</NavLink>
-              <NavLink href="#">Blog</NavLink>
-              <NavLink href="#">Contact</NavLink>
-            </SidebarWrap>
-          </MobileNavbar>
-        ) : (
-          <DesktopNavbar>
-            <LinkWrap>
-              <NavLink href="#">Home</NavLink>
-              <NavLink href="#">About us</NavLink>
-              <NavLink href="#">Services</NavLink>
-              <NavLink href="#">Projects</NavLink>
-              <NavLink href="#">Pages</NavLink>
-              <NavLink href="#">Blog</NavLink>
-              <NavLink href="#">Contact</NavLink>
-            </LinkWrap>
-            <ButtonWrap>
-              <Button>Get It Support</Button>
-            </ButtonWrap>
-          </DesktopNavbar>
-        )}
+        <MobileNavbar className="mobile-nav">
+          {!showSidebar ? (
+            <FaBars onClick={handleShowSidebar} />
+          ) : (
+            <MdClose onClick={handleCloseSidebar} />
+          )}
+
+          <SidebarWrap className={`${showSidebar ? "show" : "hide"}`}>
+            <NavLink href="#">Home</NavLink>
+            <NavLink href="#">About us</NavLink>
+            <NavLink href="#">Services</NavLink>
+            <NavLink href="#">Projects</NavLink>
+            <NavLink href="#">Pages</NavLink>
+            <NavLink href="#">Blog</NavLink>
+            <NavLink href="#">Contact</NavLink>
+          </SidebarWrap>
+        </MobileNavbar>
+
+        <DesktopNavbar>
+          <LinkWrap>
+            <NavLink href="#">Home</NavLink>
+            <NavLink href="#">About us</NavLink>
+            <NavLink href="#">Services</NavLink>
+            <NavLink href="#">Projects</NavLink>
+            <NavLink href="#">Pages</NavLink>
+            <NavLink href="#">Blog</NavLink>
+            <NavLink href="#">Contact</NavLink>
+          </LinkWrap>
+          <ButtonWrap>
+            <Button>Get It Support</Button>
+          </ButtonWrap>
+        </DesktopNavbar>
       </Wrap>
     </HeaderWrap>
   );
@@ -135,34 +133,44 @@ const MobileNavbar = styled.div`
     height: 30px;
     color: var(--white);
   }
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;
 const DesktopNavbar = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 1;
+  display: none;
+  @media (min-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
 
-  a {
-    font-weight: 700;
-    font-size: 16px;
-    @media (min-width: 1024px) {
-      color: var(--white);
+    a {
+      font-weight: 700;
+      font-size: 16px;
+      @media (min-width: 1024px) {
+        color: var(--white);
 
-      &:not(:last-of-type) {
-        margin-right: 24px;
-      }
-      &:hover {
-        background: linear-gradient(
-          to bottom right,
-          var(--white),
-          var(--orange)
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        &:nth-of-type(2n + 1) {
-          background: linear-gradient(to top left, var(--white), var(--orange));
-          -webkit-background-clip: text;
+        &:not(:last-of-type) {
+          margin-right: 24px;
+        }
+        &:hover {
+          background: linear-gradient(
+            to bottom right,
+            var(--white),
+            var(--orange)
+          );
+          background-clip: text;
           -webkit-text-fill-color: transparent;
+          &:nth-of-type(2n + 1) {
+            background: linear-gradient(
+              to top left,
+              var(--white),
+              var(--orange)
+            );
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
         }
       }
     }
