@@ -137,11 +137,12 @@ const Title = styled.p`
   font-weight: 700;
   color: var(--orange);
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   text-transform: uppercase;
 
   @media (min-width: 1024px) {
     font-size: 20px;
+    margin-bottom: 16px;
   }
 `;
 const SubTitle = styled.p`
