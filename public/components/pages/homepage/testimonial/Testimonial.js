@@ -41,8 +41,27 @@ const Testimonial = () => {
     ],
   };
 
+  useEffect(() => {
+    const section = document.getElementById("testimonials");
+
+    const TriggerAnimation = () => {
+      if (IsElementInViewport(section)) {
+        section.classList.add("animation-slideUp");
+      }
+    };
+
+    const RemoveAnimation = () => {
+      section.classList.remove("animation-slideUp");
+    };
+    window.addEventListener("scroll", TriggerAnimation);
+
+    return () => {
+      window.removeEventListener("scroll", RemoveAnimation);
+    };
+  }, []);
+
   return (
-    <SectionWrap>
+    <SectionWrap id="testimonials">
       <Title>Testimonial</Title>
       <SubTitle>What Our Clients Say</SubTitle>
       <Slider {...settings}>
