@@ -41,14 +41,15 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 150px 32px 100px;
+  padding: 230px 32px 100px;
 
   max-width: 1440px;
-  margin: 0 auto;
+  margin: -80px auto 0;
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    padding: 100px 60px 150px;
+    padding: 220px 60px 150px;
+    margin-top: -120px;
   }
 `;
 const ContentWrap = styled.div`

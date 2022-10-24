@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 //hooks
-import useMediaQuery from "../../../hooks/useMediaQuery";
 import Link from "next/link";
 
 const Header = () => {
@@ -33,7 +32,7 @@ const Header = () => {
       <Wrap>
         <a href="#" type="content">
           <LogoWrap>
-            <img src="./img/logo.png" alt="logo" />
+            <Logo src="./img/logo.png" alt="logo" />
           </LogoWrap>
         </a>
 
@@ -45,25 +44,21 @@ const Header = () => {
           )}
 
           <SidebarWrap className={`${showSidebar ? "show" : "hide"}`}>
-            <NavLink href="#">Home</NavLink>
-            <NavLink href="#">About us</NavLink>
-            <NavLink href="#">Services</NavLink>
-            <NavLink href="#">Projects</NavLink>
-            <NavLink href="#">Pages</NavLink>
-            <NavLink href="#">Blog</NavLink>
-            <NavLink href="#">Contact</NavLink>
+            {routes.map((route) => (
+              <NavLink key={route.id} href={route.path}>
+                {route.page}
+              </NavLink>
+            ))}
           </SidebarWrap>
         </MobileNavbar>
 
         <DesktopNavbar>
           <LinkWrap>
-            <NavLink href="#">Home</NavLink>
-            <NavLink href="#">About us</NavLink>
-            <NavLink href="#">Services</NavLink>
-            <NavLink href="#">Projects</NavLink>
-            <NavLink href="#">Pages</NavLink>
-            <NavLink href="#">Blog</NavLink>
-            <NavLink href="#">Contact</NavLink>
+            {routes.map((route) => (
+              <NavLink key={route.id} href={route.path}>
+                {route.page}
+              </NavLink>
+            ))}
           </LinkWrap>
           <ButtonWrap>
             <Button>Get It Support</Button>
@@ -76,17 +71,56 @@ const Header = () => {
 
 export default Header;
 
+const routes = [
+  {
+    id: 1,
+    page: "Home",
+    path: "/",
+  },
+  {
+    id: 2,
+    page: "About us",
+    path: "/about-us",
+  },
+  {
+    id: 3,
+    page: "Services",
+    path: "/services",
+  },
+  {
+    id: 4,
+    page: "Projects",
+    path: "/projects",
+  },
+  {
+    id: 5,
+    page: "Pages",
+    path: "/pages",
+  },
+  {
+    id: 6,
+    page: "Blog",
+    path: "/blog",
+  },
+  {
+    id: 7,
+    page: "Contact",
+    path: "/contact",
+  },
+];
+
 const HeaderWrap = styled.div`
-  background: linear-gradient(var(--dark-purple), var(--dark-blue));
+  position: sticky;
   padding: 0 16px;
   height: 80px !important;
   top: -120px;
   transition: top 0.5s ease-in-out;
   z-index: 999;
   box-shadow: 0 2px 28px 0 rgb(0 0 0 / 6%);
+  background: transparent;
 
   &.sticky {
-    position: sticky;
+    background: linear-gradient(var(--dark-purple), var(--dark-blue));
     top: 0;
   }
 
@@ -120,6 +154,7 @@ const Wrap = styled.div`
   }
 `;
 const LogoWrap = styled.div``;
+const Logo = styled.img``;
 
 const MobileNavbar = styled.div`
   position: relative;
