@@ -61,22 +61,24 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <SectionWrap id="testimonials">
-      <Title>Testimonial</Title>
-      <SubTitle>What Our Clients Say</SubTitle>
-      <Slider {...settings}>
-        {what_our_customer_say.map((item) => (
-          <TestimonialCard
-            key={item.id}
-            name={item.name}
-            role={item.role}
-            avatar={item.avatar}
-            content={item.content}
-            rating={item.rating}
-          />
-        ))}
-      </Slider>
-    </SectionWrap>
+    <Wrapper>
+      <SectionWrap id="testimonials">
+        <Title>Testimonial</Title>
+        <SubTitle>What Our Clients Say</SubTitle>
+        <Slider {...settings}>
+          {what_our_customer_say.map((item) => (
+            <TestimonialCard
+              key={item.id}
+              name={item.name}
+              role={item.role}
+              avatar={item.avatar}
+              content={item.content}
+              rating={item.rating}
+            />
+          ))}
+        </Slider>
+      </SectionWrap>
+    </Wrapper>
   );
 };
 
@@ -121,8 +123,14 @@ const what_our_customer_say = [
   },
 ];
 
+const Wrapper = styled.div`
+  background-color: var(--white);
+  color: var(--black);
+`;
 const SectionWrap = styled.div`
   padding: 60px 16px;
+  max-width: 1320px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: 60px 32px;

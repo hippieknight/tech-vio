@@ -2,6 +2,7 @@ import AboutUs from "../../public/components/pages/homepage/about-us/AboutUs";
 import HomeBanner from "../../public/components/pages/homepage/banner/Banner";
 import Blog from "../../public/components/pages/homepage/blog/Blog";
 import Counter from "../../public/components/pages/homepage/counter/Counter";
+import OurCustomer from "../../public/components/pages/homepage/our-customer/OurCustomer";
 import OurTeam from "../../public/components/pages/homepage/our-team/OurTeam";
 import Testimonial from "../../public/components/pages/homepage/testimonial/Testimonial";
 import WhatWeProvide from "../../public/components/pages/homepage/what-we-provide/WhatWeProvide";
@@ -22,6 +23,7 @@ export default function HomePage() {
       <OurTeam />
       <Blog />
       <WorkWithUs />
+      <OurCustomer />
     </>
   );
 }

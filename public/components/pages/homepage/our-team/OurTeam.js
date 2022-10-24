@@ -3,20 +3,22 @@ import TeamCard from "../../../_common/card/TeamCard";
 
 const OurTeam = () => {
   return (
-    <SectionWrap id="our-team">
-      <Title>Team Member</Title>
-      <SubTitle>Expert Team</SubTitle>
-      <TeamWrap>
-        {our_team.map((item) => (
-          <TeamCard
-            key={item.id}
-            name={item.name}
-            role={item.role}
-            avtUrl={item.avtUrl}
-          />
-        ))}
-      </TeamWrap>
-    </SectionWrap>
+    <Wrapper>
+      <SectionWrap id="our-team">
+        <Title>Team Member</Title>
+        <SubTitle>Expert Team</SubTitle>
+        <TeamWrap>
+          {our_team.map((item) => (
+            <TeamCard
+              key={item.id}
+              name={item.name}
+              role={item.role}
+              avtUrl={item.avtUrl}
+            />
+          ))}
+        </TeamWrap>
+      </SectionWrap>
+    </Wrapper>
   );
 };
 
@@ -49,15 +51,21 @@ const our_team = [
   },
 ];
 
+const Wrapper = styled.div`
+  background: var(--section-background);
+  color: var(--black);
+`;
+
 const SectionWrap = styled.div`
   padding: 60px 16px;
-  background: var(--section-background);
+  max-width: 1320px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: 60px 32px;
   }
   @media (min-width: 1024px) {
-    padding: 80px 60px;
+    padding: 80px 0;
   }
 `;
 

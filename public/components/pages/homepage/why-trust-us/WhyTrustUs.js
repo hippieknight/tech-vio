@@ -24,26 +24,28 @@ const WhyTrustUs = () => {
   }, []);
 
   return (
-    <SectionWrap id="why-trust-us">
-      <ContentWrap>
-        <Title>Why Trust Us?</Title>
-        <SubTitle>
-          Achieve digital transformation for your retail business services
-        </SubTitle>
-        <Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Description>
-        <WhyChooseWrap>
-          {why_trust_us.map((item) => (
-            <WhyCard key={item.id} {...item} />
-          ))}
-        </WhyChooseWrap>
-      </ContentWrap>
-      <ImageWrap>
-        <Image src="./img/why-choose-us/choose2.jpg" alt="why-trust-us" />
-      </ImageWrap>
-    </SectionWrap>
+    <Wrapper>
+      <SectionWrap id="why-trust-us">
+        <ContentWrap>
+          <Title>Why Trust Us?</Title>
+          <SubTitle>
+            Achieve digital transformation for your retail business services
+          </SubTitle>
+          <Description>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Description>
+          <WhyChooseWrap>
+            {why_trust_us.map((item) => (
+              <WhyCard key={item.id} {...item} />
+            ))}
+          </WhyChooseWrap>
+        </ContentWrap>
+        <ImageWrap>
+          <Image src="./img/why-choose-us/choose2.jpg" alt="why-trust-us" />
+        </ImageWrap>
+      </SectionWrap>
+    </Wrapper>
   );
 };
 
@@ -58,11 +60,18 @@ const why_trust_us = [
   { id: 6, name: "Network Monitoring" },
 ];
 
+const Wrapper = styled.div`
+  background-color: var(--white);
+  color: var(--black);
+`;
+
 const SectionWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 60px 16px;
+  max-width: 1320px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: 60px 32px;

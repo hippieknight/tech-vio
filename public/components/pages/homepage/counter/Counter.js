@@ -35,32 +35,41 @@ const Counter = () => {
   }, []);
 
   return (
-    <CounterWrap id="counter">
-      {show && (
-        <>
-          <CounterContent name="Years Helping Business" maxCount={27} hasPlus />
-          <CounterContent name="Complete Projects" maxCount={30} suffix="M" />
-          <CounterContent name="Employees" maxCount={500} hasPlus />
-          <CounterContent name="Star Rating" maxCount={90} hasPlus suffix="K" />
-        </>
-      )}
-    </CounterWrap>
+    <Wrapper>
+      <CounterWrap id="counter">
+        {show && (
+          <>
+            <CounterContent
+              name="Years Helping Business"
+              maxCount={27}
+              hasPlus
+            />
+            <CounterContent name="Complete Projects" maxCount={30} suffix="M" />
+            <CounterContent name="Employees" maxCount={500} hasPlus />
+            <CounterContent
+              name="Star Rating"
+              maxCount={90}
+              hasPlus
+              suffix="K"
+            />
+          </>
+        )}
+      </CounterWrap>
+    </Wrapper>
   );
 };
 
 export default Counter;
 
-const CounterWrap = styled.div`
+const Wrapper = styled.div`
   position: relative;
-  padding: 100px;
   background: url("./img/counter/banner-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  display: grid;
-  gap: 32px;
   z-index: 1;
+  color: var(--white);
 
   &::after {
     content: "";
@@ -74,6 +83,13 @@ const CounterWrap = styled.div`
     opacity: 0.6;
     background: #03030c;
   }
+`;
+const CounterWrap = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px;
+  display: grid;
+  gap: 32px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);

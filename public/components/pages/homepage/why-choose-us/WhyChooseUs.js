@@ -24,26 +24,28 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <SectionWrap id="why-choose-us">
-      <ImageWrap>
-        <Image src="./img/why-choose-us/choose.jpg" alt="why-choose-us" />
-      </ImageWrap>
-      <ContentWrap>
-        <Title>Why Choose Us?</Title>
-        <SubTitle>
-          Safeguard your brand with Cyber-Security & IT Solutions
-        </SubTitle>
-        <Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </Description>
-        <WhyChooseWrap>
-          {why_choose_us.map((item) => (
-            <WhyCard key={item.id} {...item} />
-          ))}
-        </WhyChooseWrap>
-      </ContentWrap>
-    </SectionWrap>
+    <Wrapper>
+      <SectionWrap id="why-choose-us">
+        <ImageWrap>
+          <Image src="./img/why-choose-us/choose.jpg" alt="why-choose-us" />
+        </ImageWrap>
+        <ContentWrap>
+          <Title>Why Choose Us?</Title>
+          <SubTitle>
+            Safeguard your brand with Cyber-Security & IT Solutions
+          </SubTitle>
+          <Description>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Description>
+          <WhyChooseWrap>
+            {why_choose_us.map((item) => (
+              <WhyCard key={item.id} {...item} />
+            ))}
+          </WhyChooseWrap>
+        </ContentWrap>
+      </SectionWrap>
+    </Wrapper>
   );
 };
 
@@ -58,11 +60,18 @@ const why_choose_us = [
   { id: 6, name: "Cloud Services" },
 ];
 
+const Wrapper = styled.div`
+  background-color: var(--white);
+  color: var(--black);
+`;
+
 const SectionWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 60px 16px;
+  max-width: 1320px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: 60px 32px;

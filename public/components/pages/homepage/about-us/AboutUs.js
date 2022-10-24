@@ -42,60 +42,67 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <SectionWrap id="about-us">
-      <ContentWrap>
-        <Title>About Our Company</Title>
-        <SubTitle>
-          Providing your business with a quality IT service is our passion.
-        </SubTitle>
-        <Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad
-          minim veniam, nostrud
-        </Description>
-        {show && (
-          <ProgressWrap>
-            <ProgressCpn
-              percent={90}
-              title="IT Consulting"
-              showPercent
-              color="#7B68EE"
-            />
-            <ProgressCpn
-              percent={75}
-              title="Virtual Workstation"
-              showPercent
-              color="#7B68EE"
-            />
-            <ProgressCpn
-              percent={80}
-              title="Managed IT Service"
-              showPercent
-              color="#7B68EE"
-            />
-          </ProgressWrap>
-        )}
-        <Button className="button button-secondary">Learn More</Button>
-      </ContentWrap>
-      <ImageWrap>
-        <Image src="./img/about-us/about.jpg" alt="about-us" />
-        <YearOfExp>
-          <h2>23</h2>
-          <p>YEARS EXPERIENCE</p>
-        </YearOfExp>
-      </ImageWrap>
-    </SectionWrap>
+    <Wrapper>
+      <SectionWrap id="about-us">
+        <ContentWrap>
+          <Title>About Our Company</Title>
+          <SubTitle>
+            Providing your business with a quality IT service is our passion.
+          </SubTitle>
+          <Description>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad
+            minim veniam, nostrud
+          </Description>
+          {show && (
+            <ProgressWrap>
+              <ProgressCpn
+                percent={90}
+                title="IT Consulting"
+                showPercent
+                color="#7B68EE"
+              />
+              <ProgressCpn
+                percent={75}
+                title="Virtual Workstation"
+                showPercent
+                color="#7B68EE"
+              />
+              <ProgressCpn
+                percent={80}
+                title="Managed IT Service"
+                showPercent
+                color="#7B68EE"
+              />
+            </ProgressWrap>
+          )}
+          <Button className="button button-secondary">Learn More</Button>
+        </ContentWrap>
+        <ImageWrap>
+          <Image src="./img/about-us/about.jpg" alt="about-us" />
+          <YearOfExp>
+            <h2>23</h2>
+            <p>YEARS EXPERIENCE</p>
+          </YearOfExp>
+        </ImageWrap>
+      </SectionWrap>
+    </Wrapper>
   );
 };
 
 export default AboutUs;
 
+const Wrapper = styled.div`
+  background-color: var(--section-background);
+  color: var(--black);
+`;
 const SectionWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 60px 16px;
-  background-color: var(--section-background);
+  max-width: 1320px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: 60px 32px;

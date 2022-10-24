@@ -2,33 +2,30 @@ import styled from "@emotion/styled";
 
 const HomeBanner = () => {
   return (
-    <Wrap>
-      <ContentWrap>
-        <Title>IT Solutions & Business Services Company</Title>
-        <SubTitle>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua, magna
-          aliqua. ipsum is simply dummy text of the printing.
-        </SubTitle>
-        <ButtonWrap>
-          <Button className="button button-primary">About Us</Button>
-          <Button className="button button-secondary">Contact Us</Button>
-        </ButtonWrap>
-      </ContentWrap>
-      <Image src="./img/banner/homepage/home-font.png" alt="main-image" />
-      <BottomImg src="./img/banner/homepage/home-bottom-shape.png" alt="" />
-    </Wrap>
+    <Wrapper>
+      <Wrap>
+        <ContentWrap>
+          <Title>IT Solutions & Business Services Company</Title>
+          <SubTitle>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua, magna
+            aliqua. ipsum is simply dummy text of the printing.
+          </SubTitle>
+          <ButtonWrap>
+            <Button className="button button-primary">About Us</Button>
+            <Button className="button button-secondary">Contact Us</Button>
+          </ButtonWrap>
+        </ContentWrap>
+        <Image src="./img/banner/homepage/home-font.png" alt="main-image" />
+        <BottomImg src="./img/banner/homepage/home-bottom-shape.png" alt="" />
+      </Wrap>
+    </Wrapper>
   );
 };
 
 export default HomeBanner;
 
-const Wrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  padding: 150px 32px 100px;
+const Wrapper = styled.div`
   background: linear-gradient(
     to bottom,
     #370b6f,
@@ -37,6 +34,17 @@ const Wrap = styled.div`
     #0095ce,
     #2dbcdc
   );
+`;
+
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 150px 32px 100px;
+
+  max-width: 1440px;
+  margin: 0 auto;
 
   @media (min-width: 1024px) {
     flex-direction: row;
@@ -100,6 +108,6 @@ const Image = styled.img`
 const BottomImg = styled.img`
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: -2px;
   max-width: 100%;
 `;

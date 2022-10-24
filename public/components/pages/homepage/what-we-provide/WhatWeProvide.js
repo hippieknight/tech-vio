@@ -30,15 +30,17 @@ const WhatWeProvide = () => {
   }, []);
 
   return (
-    <SectionWrap id="what-we-provide">
-      <Title>What We Provide</Title>
-      <SubTitle>IT Solutions</SubTitle>
-      <ContentWrap>
-        {what_we_provide.map((item) => (
-          <ProvideCard key={item.id} {...item} />
-        ))}
-      </ContentWrap>
-    </SectionWrap>
+    <Wrapper>
+      <SectionWrap id="what-we-provide">
+        <Title>What We Provide</Title>
+        <SubTitle>IT Solutions</SubTitle>
+        <ContentWrap>
+          {what_we_provide.map((item) => (
+            <ProvideCard key={item.id} {...item} />
+          ))}
+        </ContentWrap>
+      </SectionWrap>
+    </Wrapper>
   );
 };
 
@@ -89,8 +91,14 @@ const what_we_provide = [
   },
 ];
 
+const Wrapper = styled.div`
+  background-color: var(--white);
+  color: var(--black);
+`;
 const SectionWrap = styled.div`
   padding: 60px 16px;
+  max-width: 1320px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: 60px 32px;

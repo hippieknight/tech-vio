@@ -44,9 +44,10 @@ const Wrap = styled.div`
   width: 32px;
   height: 32px;
   right: 16px;
-  top: 0;
+  top: 16px;
   border-radius: 50px;
   background-color: var(--primary-purple);
+  z-index: 9999;
 
   &.visible {
     transition: transform 2s;

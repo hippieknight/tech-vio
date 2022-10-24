@@ -3,21 +3,23 @@ import BlogCard from "../../../_common/card/Blogcard";
 
 const Blog = () => {
   return (
-    <SectionWrap>
-      <Title>Blog & Article</Title>
-      <SubTitle>Recent Blog</SubTitle>
-      <BlogWrap>
-        {blog.map((item) => (
-          <BlogCard
-            key={item.id}
-            name={item.name}
-            date={item.date}
-            description={item.description}
-            imgUrl={item.imgUrl}
-          />
-        ))}
-      </BlogWrap>
-    </SectionWrap>
+    <Wrapper>
+      <SectionWrap>
+        <Title>Blog & Article</Title>
+        <SubTitle>Recent Blog</SubTitle>
+        <BlogWrap>
+          {blog.map((item) => (
+            <BlogCard
+              key={item.id}
+              name={item.name}
+              date={item.date}
+              description={item.description}
+              imgUrl={item.imgUrl}
+            />
+          ))}
+        </BlogWrap>
+      </SectionWrap>
+    </Wrapper>
   );
 };
 
@@ -50,8 +52,14 @@ const blog = [
   },
 ];
 
+const Wrapper = styled.div`
+  background-color: var(--white);
+  color: var(--black);
+`;
 const SectionWrap = styled.div`
   padding: 60px 16px;
+  max-width: 1320px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: 60px 32px;
