@@ -87,10 +87,10 @@ const SubTitle = styled.p`
   }
   @media (min-width: 1024px) {
     font-size: 52px;
-    padding: 0 150px;
   }
   @media (min-width: 1440px) {
     padding: 0;
+    padding: 0 150px;
   }
 `;
 
@@ -104,8 +104,6 @@ const Description = styled.p`
   }
   @media (min-width: 1024px) {
     font-size: 24px;
-  }
-  @media (min-width: 1440px) {
     padding: 0;
   }
 `;

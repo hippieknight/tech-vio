@@ -28,7 +28,8 @@ const CardWrap = styled.div`
   }
 
   &:hover {
-    transform: scale(1.03);
+    transform: translateY(-10px);
+    transition: transform 0.5s;
     svg {
       transition: transform 0.5s;
       transform: rotateY(180deg);
