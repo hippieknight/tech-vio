@@ -61,7 +61,6 @@ const why_choose_us = [
 ];
 
 const Wrapper = styled.div`
-  background-color: var(--white);
   color: var(--black);
 `;
 
