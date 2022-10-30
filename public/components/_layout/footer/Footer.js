@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { FaFacebookF, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { MdOutlinePhoneInTalk, MdOutlineEmail } from "react-icons/md";
-import { HiOutlineMapPin } from "react-icons/hi";
+import { FiMapPin } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -64,7 +64,7 @@ const Footer = () => {
               <MdOutlineEmail /> hiepsimattroi1807@gmail.com
             </p>
             <p>
-              <HiOutlineMapPin /> Street 8, Linh Trung, Thu Duc
+              <FiMapPin /> Street 8, Linh Trung, Thu Duc
             </p>
           </Info>
         </Column>
