@@ -9,7 +9,7 @@ import WorkWithUs from "../../public/components/pages/homepage/work-with-us/Work
 export default function AboutUsPage() {
   return (
     <>
-      <BannerAboutUs />
+      <BannerAboutUs sectionTitle='About Us' />
       <AboutUs />
       <Counter />
       <OurTeam />

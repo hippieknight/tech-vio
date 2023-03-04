@@ -34,13 +34,15 @@ const CardWrap = styled.div`
     &::before {
       width: 100%;
       transition: 0.4s;
-      z-index: -1;
+      z-index: 1;
     }
   }
 `;
 const Name = styled.p`
+position: relative;
   font-size: 18px;
   font-weight: 700;
+  z-index: 1;
 
   @media (min-width: 1024px) {
     font-size: 16px;

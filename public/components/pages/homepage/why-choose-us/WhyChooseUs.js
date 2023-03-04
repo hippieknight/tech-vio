@@ -61,6 +61,7 @@ const why_choose_us = [
 ];
 
 const Wrapper = styled.div`
+  background: var(--white);
   color: var(--black);
 `;
 
@@ -86,7 +87,7 @@ const ContentWrap = styled.div`
 
   @media (min-width: 1024px) {
     margin-bottom: unset;
-    margin-right: 40px;
+    margin-left: 40px;
     flex: 1;
   }
 `;

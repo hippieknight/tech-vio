@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 import BreadCrumb from "../../../_common/breadcrumb/BreadCrumb";
 
-const BannerAboutUs = () => {
+const BannerAboutUs = ({sectionTitle}) => {
   return (
     <Wrapper>
       <SectionWrap>
-        <PageName>About Us</PageName>
+        <PageName>{sectionTitle}</PageName>
         <BreadCrumb />
       </SectionWrap>
     </Wrapper>
